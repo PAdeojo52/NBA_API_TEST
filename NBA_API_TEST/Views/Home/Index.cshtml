@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    
+</div>
+
+
+<table class = "table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayName("Home Team")</th>
+        
+            <th>@Html.DisplayName("Home Points")</th>
+        
+            <th>@Html.DisplayName("Visitors Team")</th>
+    
+            <th>@Html.DisplayName("Visitors Points")</th>
+       </tr>
+    </thead>
+
+    <tbody>
+        @foreach (NBAModel nmodel in Model )
+        {
+            <tr>
+                <td>@nmodel.Teams.Home.Code</td>
+                <td>@nmodel.Scores.Home.Points</td>
+                <td>@nmodel.Teams.Visitors.Code</td>
+                <td>@nmodel.Scores.Visitors.Points</td>
+                
+            </tr>    
+        }
+
+    </tbody>
+
+</table>
